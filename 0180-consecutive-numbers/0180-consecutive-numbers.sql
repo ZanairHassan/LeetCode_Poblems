@@ -6,4 +6,5 @@ FROM (
            LEAD(num) OVER (ORDER BY id) AS next_num
     FROM Logs
 ) AS temp
-WHERE num = prev_num AND num = next_num;
+WHERE num = prev_num AND num = next_num
+ORDER BY num;
